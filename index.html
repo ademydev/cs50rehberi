@@ -1,245 +1,1346 @@
-<!doctype html>
-<html lang="tr">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CS50 Rehberi</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The ultimate guide to CS50 — Harvard's Introduction to Computer Science. Week-by-week breakdowns, problem sets, algorithms, and more.">
+  <title>CS50 Explainer — Complete Guide to Harvard's Intro to CS</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Page loader animation -->
-  <div id="page-loader" class="loader">
-    <div class="logo-anim">CS50</div>
+  <button class="mobile-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1>CS50 Explainer</h1>
+        <p class="subtitle">Your complete guide to Harvard's Introduction to Computer Science</p>
+      </div>
+
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" id="search" placeholder="Search topics..." autocomplete="off">
+      </div>
+
+      <nav id="nav">
+        <div class="nav-group">
+          <div class="nav-group-label">Start Here</div>
+          <button type="button" data-section="home" class="active">Overview</button>
+          <button type="button" data-section="about">What is CS50?</button>
+          <button type="button" data-section="variants">Course Variants</button>
+          <button type="button" data-section="start">Getting Started</button>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-label">Weekly Lectures</div>
+          <button type="button" data-section="week0"><span class="week-num">W0</span> Scratch</button>
+          <button type="button" data-section="week1"><span class="week-num">W1</span> C Programming</button>
+          <button type="button" data-section="week2"><span class="week-num">W2</span> Arrays</button>
+          <button type="button" data-section="week3"><span class="week-num">W3</span> Algorithms</button>
+          <button type="button" data-section="week4"><span class="week-num">W4</span> Memory</button>
+          <button type="button" data-section="week5"><span class="week-num">W5</span> Data Structures</button>
+          <button type="button" data-section="week6"><span class="week-num">W6</span> Python</button>
+          <button type="button" data-section="week7"><span class="week-num">W7</span> SQL</button>
+          <button type="button" data-section="week8"><span class="week-num">W8</span> HTML, CSS, JS</button>
+          <button type="button" data-section="week9"><span class="week-num">W9</span> Flask</button>
+          <button type="button" data-section="week10"><span class="week-num">W10</span> The End</button>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-label">Deep Dives</div>
+          <button type="button" data-section="psets">Problem Sets</button>
+          <button type="button" data-section="algorithms">Algorithms & Big O</button>
+          <button type="button" data-section="datastructures">Data Structures</button>
+          <button type="button" data-section="memory">Memory & Pointers</button>
+          <button type="button" data-section="tools">CS50 Tools</button>
+          <button type="button" data-section="web">Web Development</button>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-label">Finish Strong</div>
+          <button type="button" data-section="final">Final Project</button>
+          <button type="button" data-section="tips">Study Tips</button>
+          <button type="button" data-section="community">Community</button>
+          <button type="button" data-section="faq">FAQ</button>
+          <button type="button" data-section="certificate">Certificate</button>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" title="Toggle dark mode">🌙 Dark</button>
+        <button type="button" data-section="all">Show All</button>
+      </div>
+    </aside>
+
+    <main id="main-content">
+
+      <!-- HOME -->
+      <section id="home" class="section visible">
+        <div class="hero">
+          <h2>CS50: Introduction to Computer Science</h2>
+          <p class="tagline">Harvard University's world-renowned course that teaches you to think like a computer scientist — from your first line of code to building full web applications.</p>
+          <div class="hero-stats">
+            <div class="stat"><span class="num">4M+</span><span class="label">Students Worldwide</span></div>
+            <div class="stat"><span class="num">11</span><span class="label">Weeks of Content</span></div>
+            <div class="stat"><span class="num">10+</span><span class="label">Problem Sets</span></div>
+            <div class="stat"><span class="num">Free</span><span class="label">To Audit Online</span></div>
+          </div>
+        </div>
+
+        <p class="lead">Whether you're a complete beginner or looking to solidify your foundations, this guide covers everything you need to know about CS50 — week by week, concept by concept.</p>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">🎓</div>
+            <strong>Beginners Welcome</strong>
+            <p class="desc">No prior programming experience required. CS50 starts from absolute zero and builds up systematically.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🌍</div>
+            <strong>Free Online</strong>
+            <p class="desc">Audit the full course at <a href="https://cs50.harvard.edu/x/" target="_blank">cs50.harvard.edu/x</a> through edX at no cost.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">💻</div>
+            <strong>Hands-On Learning</strong>
+            <p class="desc">Weekly problem sets build real programs in C, Python, SQL, and web technologies.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🧠</div>
+            <strong>Think Algorithmically</strong>
+            <p class="desc">Learn not just syntax, but how to decompose problems and design efficient solutions.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🏗️</div>
+            <strong>Build Real Projects</strong>
+            <p class="desc">From ASCII art generators to stock simulators to your own final project.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🤝</div>
+            <strong>Global Community</strong>
+            <p class="desc">Join millions of learners on Discord, Reddit, and Ed discussion forums.</p>
+          </div>
+        </div>
+
+        <div class="progress-tracker">
+          <strong>Your Progress Tracker</strong>
+          <p style="font-size:0.88rem;color:var(--muted);margin:0.25rem 0 0">Check off weeks as you complete them. Saved locally in your browser.</p>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+          <div class="week-checklist" id="week-checklist"></div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <h2>What is CS50?</h2>
+        <p class="lead">CS50 is Harvard University's largest course — and one of the most popular computer science courses in the world.</p>
+
+        <p>CS50 (Introduction to Computer Science) is taught by Professor David J. Malan and a team of teaching fellows. It has been running since 2007 and has reached over 4 million learners through its online platform, CS50x on edX.</p>
+
+        <p>The course is designed for students with <strong>little or no prior programming experience</strong>, though experienced programmers also benefit from its breadth — especially the deep dive into C, memory management, and data structures that many bootcamps skip.</p>
+
+        <h3>What You'll Learn</h3>
+        <ul>
+          <li>How to think algorithmically and solve problems systematically</li>
+          <li>Fundamentals of programming in C, Python, SQL, HTML/CSS/JS</li>
+          <li>How computers represent and store data (binary, ASCII, memory)</li>
+          <li>Core algorithms: searching, sorting, recursion</li>
+          <li>Essential data structures: arrays, linked lists, hash tables, tries</li>
+          <li>Web development with Flask and relational databases</li>
+          <li>Topics in security, ethics, and artificial intelligence</li>
+        </ul>
+
+        <h3>The Instructor: David J. Malan</h3>
+        <p>Professor Malan is a senior preceptor in Computer Science at Harvard. Known for his energetic lecture style, he makes complex topics accessible through live coding demonstrations, visual metaphors, and real-world analogies. He holds a PhD from Harvard and has been teaching CS50 since 2007.</p>
+
+        <h3>Course Philosophy</h3>
+        <div class="callout info">
+          <strong>Concepts over syntax</strong>
+          CS50 deliberately uses multiple languages (Scratch → C → Python → SQL → JS) so you learn <em>ideas</em> that transfer across languages, not just one language's syntax.
+        </div>
+
+        <p>The course follows a "bottom-up" approach for the first half (understanding how computers work at a low level with C) and then moves "top-down" with higher-level languages and frameworks. This dual perspective gives you both depth and practical skills.</p>
+
+        <h3>Time Commitment</h3>
+        <table>
+          <thead><tr><th>Activity</th><th>Estimated Time</th></tr></thead>
+          <tbody>
+            <tr><td>Lecture videos per week</td><td>2–3 hours</td></tr>
+            <tr><td>Shorts &amp; supplemental videos</td><td>30–60 minutes</td></tr>
+            <tr><td>Problem set (varies by week)</td><td>5–20 hours</td></tr>
+            <tr><td>Quiz</td><td>15–30 minutes</td></tr>
+            <tr><td><strong>Total per week</strong></td><td><strong>8–25 hours</strong></td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout tip">
+          <strong>Pro tip</strong>
+          Weeks 4 (Memory) and 5 (Data Structures) are typically the hardest. Budget extra time and don't hesitate to rewatch lectures.
+        </div>
+      </section>
+
+      <!-- VARIANTS -->
+      <section id="variants" class="section">
+        <h2>CS50 Course Variants</h2>
+        <p class="lead">CS50 has expanded into specialized versions for different audiences. All share the same rigorous foundation.</p>
+
+        <div class="card-grid">
+          <div class="card">
+            <strong>CS50x</strong>
+            <p class="desc">The flagship online course on edX. Free to audit, optional verified certificate. This is the version most self-learners take.</p>
+          </div>
+          <div class="card">
+            <strong>CS50 AP</strong>
+            <p class="desc">Adapted for high school students preparing for the AP Computer Science Principles exam. Aligned with College Board standards.</p>
+          </div>
+          <div class="card">
+            <strong>CS50 for Lawyers</strong>
+            <p class="desc">A variant focused on computational thinking for legal professionals — algorithms, data, and technology in law.</p>
+          </div>
+          <div class="card">
+            <strong>CS50 for Business</strong>
+            <p class="desc">Tailored for business professionals who need to understand technology, data, and software development.</p>
+          </div>
+          <div class="card">
+            <strong>CS50 AI</strong>
+            <p class="desc">A follow-up course exploring artificial intelligence — search, optimization, machine learning, and neural networks.</p>
+          </div>
+          <div class="card">
+            <strong>CS50 Web</strong>
+            <p class="desc">A follow-up focused entirely on web programming — deeper Flask, React, Django, and modern web development.</p>
+          </div>
+        </div>
+
+        <h3>On-Campus vs. Online</h3>
+        <p>Harvard students take CS50 in-person with live lectures, sections (small-group tutorials), and in-person office hours. Online learners get the same lecture recordings, problem sets, and grading tools, but participate asynchronously through Ed discussion boards and virtual office hours.</p>
+      </section>
+
+      <!-- GETTING STARTED -->
+      <section id="start" class="section">
+        <h2>Getting Started</h2>
+        <p class="lead">Follow these steps to begin your CS50 journey today.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Step 1: Register on edX</h4>
+            <p>Go to <a href="https://cs50.harvard.edu/x/" target="_blank">cs50.harvard.edu/x</a> and create a free edX account. Enroll in CS50x — auditing is completely free.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Step 2: Set Up Your Environment</h4>
+            <p>Use the <strong>CS50 Codespace</strong> (cloud-based VS Code in your browser) or install tools locally. For local setup on Windows/Mac/Linux, follow the official setup guides on the course website.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Step 3: Watch Week 0</h4>
+            <p>Start with the Scratch lecture. Even if Scratch feels simple, it introduces computational thinking patterns you'll use throughout the course.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Step 4: Complete Your First Pset</h4>
+            <p>Build a Scratch project (game, animation, or interactive art). Submit via the CS50 submit tool. Celebrate — you've started!</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Step 5: Join the Community</h4>
+            <p>Connect with other learners on the CS50 Discord, <a href="https://reddit.com/r/cs50" target="_blank">r/cs50</a>, and the Ed discussion board. Don't struggle alone.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Step 6: One Week at a Time</h4>
+            <p>Resist the urge to skip ahead. Each week builds on the previous one. Fall behind? That's okay — just keep going at your own pace.</p>
+          </div>
+        </div>
+
+        <h3>Local Development Setup</h3>
+        <pre><code><span class="cm"># Install the CS50 library (Linux/macOS)</span>
+<span class="fn">curl</span> -s https://cs50.ly/cli | bash
+
+<span class="cm"># Verify installation</span>
+<span class="fn">cs50 version</span>
+
+<span class="cm"># Compile a C program</span>
+<span class="fn">make</span> hello
+<span class="fn">./hello</span></code></pre>
+
+        <div class="callout warn">
+          <strong>Windows users</strong>
+          CS50 recommends using WSL (Windows Subsystem for Linux) or the cloud-based Codespace for the C weeks. Native Windows C development requires extra configuration.
+        </div>
+      </section>
+
+      <!-- WEEK 0 -->
+      <section id="week0" class="section">
+        <h2>Week 0 — Computational Thinking with Scratch</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 0</span>
+            <h3>Scratch &amp; Computational Thinking</h3>
+          </div>
+          <p>Before writing code in a text-based language, CS50 introduces programming concepts visually using <strong>Scratch</strong>, a block-based language developed at MIT.</p>
+          <div class="week-topics">
+            <span class="topic-tag">Binary</span>
+            <span class="topic-tag">ASCII &amp; Unicode</span>
+            <span class="topic-tag">Algorithms</span>
+            <span class="topic-tag">Functions</span>
+            <span class="topic-tag">Conditionals</span>
+            <span class="topic-tag">Loops</span>
+            <span class="topic-tag">Variables</span>
+            <span class="topic-tag">Events</span>
+          </div>
+          <span class="pset-badge">📝 Pset: Scratch Project</span>
+        </div>
+
+        <h3>Key Concepts</h3>
+        <h4>Binary</h4>
+        <p>Computers only understand 0s and 1s. Everything — text, images, sound — is encoded in binary. A single binary digit is a <strong>bit</strong>; 8 bits make a <strong>byte</strong>.</p>
+        <pre><code><span class="cm">// The letter 'A' in ASCII</span>
+A = 65 = <span class="num">01000001</span>
+
+<span class="cm">// Counting in binary</span>
+<span class="num">0</span> = <span class="num">0</span>
+<span class="num">1</span> = <span class="num">1</span>
+<span class="num">2</span> = <span class="num">10</span>
+<span class="num">3</span> = <span class="num">11</span>
+<span class="num">4</span> = <span class="num">100</span>
+<span class="num">5</span> = <span class="num">101</span></code></pre>
+
+        <h4>Scratch Building Blocks</h4>
+        <ul>
+          <li><strong>Motion</strong> — move, turn, go to coordinates</li>
+          <li><strong>Looks</strong> — say, think, change costumes</li>
+          <li><strong>Sound</strong> — play notes and effects</li>
+          <li><strong>Events</strong> — when flag clicked, when key pressed</li>
+          <li><strong>Control</strong> — if/else, repeat, forever, wait</li>
+          <li><strong>Sensing</strong> — detect mouse, keyboard, collisions</li>
+          <li><strong>Operators</strong> — math and logic comparisons</li>
+          <li><strong>Variables</strong> — store and manipulate data</li>
+          <li><strong>My Blocks</strong> — create custom functions</li>
+        </ul>
+
+        <h3>Problem Set: Scratch</h3>
+        <p>Create a project of your own design in Scratch that uses at least:</p>
+        <ul>
+          <li>2+ sprites (characters/objects)</li>
+          <li>3+ scripts total</li>
+          <li>1+ conditional, 1+ loop, 1+ variable</li>
+          <li>1+ custom block (function) with a parameter</li>
+        </ul>
+        <p>Popular project ideas: platformer game, interactive quiz, animation story, music maker, maze game.</p>
+      </section>
+
+      <!-- WEEK 1 -->
+      <section id="week1" class="section">
+        <h2>Week 1 — C Programming</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 1</span>
+            <h3>Programming in C</h3>
+          </div>
+          <p>You transition from visual blocks to a text-based language: <strong>C</strong>. C is close to the machine — it gives you direct control over memory and is the foundation for understanding how all software works.</p>
+          <div class="week-topics">
+            <span class="topic-tag">Source Code → Machine Code</span>
+            <span class="topic-tag">Variables &amp; Types</span>
+            <span class="topic-tag">Conditionals</span>
+            <span class="topic-tag">Loops</span>
+            <span class="topic-tag">Functions</span>
+            <span class="topic-tag">Scope</span>
+            <span class="topic-tag">The CS50 Library</span>
+          </div>
+          <span class="pset-badge">📝 Pset: C — Mario, Cash, Credit</span>
+        </div>
+
+        <h3>Your First C Program</h3>
+        <pre><code><span class="kw">#include</span> <span class="str">&lt;cs50.h&gt;</span>
+<span class="kw">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="type">int</span> <span class="fn">main</span>(<span class="type">void</span>)
+{
+    <span class="type">string</span> name = <span class="fn">get_string</span>(<span class="str">"What's your name? "</span>);
+    <span class="fn">printf</span>(<span class="str">"hello, %s\n"</span>, name);
+}</code></pre>
+
+        <h3>Data Types in C</h3>
+        <table>
+          <thead><tr><th>Type</th><th>Size</th><th>Example</th><th>Format Specifier</th></tr></thead>
+          <tbody>
+            <tr><td><code>int</code></td><td>4 bytes</td><td><code>42</code></td><td><code>%i</code></td></tr>
+            <tr><td><code>long</code></td><td>8 bytes</td><td><code>1000000L</code></td><td><code>%li</code></td></tr>
+            <tr><td><code>float</code></td><td>4 bytes</td><td><code>3.14f</code></td><td><code>%f</code></td></tr>
+            <tr><td><code>double</code></td><td>8 bytes</td><td><code>3.14159</code></td><td><code>%f</code></td></tr>
+            <tr><td><code>char</code></td><td>1 byte</td><td><code>'A'</code></td><td><code>%c</code></td></tr>
+            <tr><td><code>string</code></td><td>variable</td><td><code>"hello"</code></td><td><code>%s</code></td></tr>
+            <tr><td><code>bool</code></td><td>1 byte</td><td><code>true</code></td><td><code>%i</code></td></tr>
+          </tbody>
+        </table>
+
+        <h3>Control Flow</h3>
+        <pre><code><span class="cm">// Conditional</span>
+<span class="kw">if</span> (x &lt; y)
+{
+    <span class="fn">printf</span>(<span class="str">"x is less than y\n"</span>);
+}
+<span class="kw">else if</span> (x &gt; y)
+{
+    <span class="fn">printf</span>(<span class="str">"x is greater than y\n"</span>);
+}
+<span class="kw">else</span>
+{
+    <span class="fn">printf</span>(<span class="str">"x equals y\n"</span>);
+}
+
+<span class="cm">// For loop</span>
+<span class="kw">for</span> (<span class="type">int</span> i = <span class="num">0</span>; i &lt; <span class="num">3</span>; i++)
+{
+    <span class="fn">printf</span>(<span class="str">"meow\n"</span>);
+}
+
+<span class="cm">// While loop</span>
+<span class="kw">while</span> (n &gt; <span class="num">0</span>)
+{
+    <span class="fn">printf</span>(<span class="str">"🍫"</span>);
+    n--;
+}</code></pre>
+
+        <h3>Problem Sets</h3>
+        <ul>
+          <li><strong>Mario</strong> — Print pyramids of # characters using nested loops. Teaches loop logic and pattern printing.</li>
+          <li><strong>Cash</strong> — Calculate minimum coins for change using greedy algorithm. Introduces algorithmic thinking.</li>
+          <li><strong>Credit</strong> — Validate credit card numbers using Luhn's algorithm. Practice with conditionals and arithmetic.</li>
+        </ul>
+      </section>
+
+      <!-- WEEK 2 -->
+      <section id="week2" class="section">
+        <h2>Week 2 — Arrays</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 2</span>
+            <h3>Arrays, Strings &amp; Debugging</h3>
+          </div>
+          <p>Learn how to store collections of data in <strong>arrays</strong>, work with <strong>strings</strong> (which are arrays of characters), accept <strong>command-line arguments</strong>, and master the art of <strong>debugging</strong>.</p>
+          <div class="week-topics">
+            <span class="topic-tag">Arrays</span>
+            <span class="topic-tag">Strings</span>
+            <span class="topic-tag">Command-Line Args</span>
+            <span class="topic-tag">Cryptography</span>
+            <span class="topic-tag">Debugging</span>
+            <span class="topic-tag">Exit Codes</span>
+          </div>
+          <span class="pset-badge">📝 Pset: Arrays — Readability, Caesar, Substitution</span>
+        </div>
+
+        <h3>Arrays</h3>
+        <pre><code><span class="type">int</span> scores[<span class="num">3</span>];
+scores[<span class="num">0</span>] = <span class="num">72</span>;
+scores[<span class="num">1</span>] = <span class="num">73</span>;
+scores[<span class="num">2</span>] = <span class="num">33</span>;
+
+<span class="cm">// Array length with CS50 library</span>
+<span class="type">int</span> total = <span class="fn">strlen</span>(name);</code></pre>
+
+        <h3>Strings Are Arrays</h3>
+        <p>In C, a string is simply an array of characters terminated by a null character <code>\0</code>. The string <code>"HI!"</code> is stored as:</p>
+        <pre><code>H   I   !   \0
+<span class="num">72  73  33  0</span>   <span class="cm">// ASCII values + null terminator</span></code></pre>
+
+        <h3>Command-Line Arguments</h3>
+        <pre><code><span class="type">int</span> <span class="fn">main</span>(<span class="type">int</span> argc, <span class="type">string</span> argv[])
+{
+    <span class="kw">if</span> (argc != <span class="num">2</span>)
+    {
+        <span class="fn">printf</span>(<span class="str">"Usage: ./caesar key\n"</span>);
+        <span class="kw">return</span> <span class="num">1</span>;
+    }
+    <span class="type">string</span> key = argv[<span class="num">1</span>];
+    <span class="cm">// ... encrypt plaintext using key</span>
+}</code></pre>
+
+        <h3>Problem Sets</h3>
+        <ul>
+          <li><strong>Readability</strong> — Compute the Coleman-Liau index to determine the reading grade level of a text passage.</li>
+          <li><strong>Caesar</strong> — Implement Caesar cipher encryption. Each letter shifts by a fixed number of positions.</li>
+          <li><strong>Substitution</strong> — Implement a substitution cipher where each letter maps to a unique replacement letter.</li>
+        </ul>
+
+        <div class="callout tip">
+          <strong>Debugging tools</strong>
+          Use <code>printf</code> for quick checks, <code>debug50</code> for step-through debugging, and <code>valgrind</code> (later weeks) for memory errors.
+        </div>
+      </section>
+
+      <!-- WEEK 3 -->
+      <section id="week3" class="section">
+        <h2>Week 3 — Algorithms</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 3</span>
+            <h3>Searching, Sorting &amp; Big O</h3>
+          </div>
+          <p>This week introduces the study of <strong>algorithms</strong> — step-by-step procedures for solving problems — and analyzes their efficiency using <strong>Big O notation</strong>.</p>
+          <div class="week-topics">
+            <span class="topic-tag">Linear Search</span>
+            <span class="topic-tag">Binary Search</span>
+            <span class="topic-tag">Bubble Sort</span>
+            <span class="topic-tag">Selection Sort</span>
+            <span class="topic-tag">Merge Sort</span>
+            <span class="topic-tag">Recursion</span>
+            <span class="topic-tag">Big O Notation</span>
+          </div>
+          <span class="pset-badge">📝 Pset: Sort — Plurality, Runoff, Tideman</span>
+        </div>
+
+        <h3>Searching Algorithms</h3>
+        <table>
+          <thead><tr><th>Algorithm</th><th>Best</th><th>Worst</th><th>Requirement</th></tr></thead>
+          <tbody>
+            <tr><td>Linear Search</td><td>O(1)</td><td>O(n)</td><td>None</td></tr>
+            <tr><td>Binary Search</td><td>O(1)</td><td>O(log n)</td><td>Data must be sorted</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Sorting Algorithms</h3>
+        <table>
+          <thead><tr><th>Algorithm</th><th>Best</th><th>Average</th><th>Worst</th></tr></thead>
+          <tbody>
+            <tr><td>Bubble Sort</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td></tr>
+            <tr><td>Selection Sort</td><td>O(n²)</td><td>O(n²)</td><td>O(n²)</td></tr>
+            <tr><td>Merge Sort</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Recursion</h3>
+        <pre><code><span class="type">int</span> <span class="fn">factorial</span>(<span class="type">int</span> n)
+{
+    <span class="kw">if</span> (n == <span class="num">0</span>)
+    {
+        <span class="kw">return</span> <span class="num">1</span>;          <span class="cm">// base case</span>
+    }
+    <span class="kw">return</span> n * <span class="fn">factorial</span>(n - <span class="num">1</span>);  <span class="cm">// recursive case</span>
+}
+
+<span class="cm">// factorial(3) = 3 * factorial(2)
+//              = 3 * 2 * factorial(1)
+//              = 3 * 2 * 1 * factorial(0)
+//              = 3 * 2 * 1 * 1 = 6</span></code></pre>
+
+        <h3>Problem Sets</h3>
+        <ul>
+          <li><strong>Plurality</strong> — Simulate a plurality election (whoever gets the most votes wins).</li>
+          <li><strong>Runoff</strong> — Simulate a ranked-choice runoff election with elimination rounds.</li>
+          <li><strong>Tideman</strong> — Implement the Tideman voting algorithm using graph theory (most challenging pset so far).</li>
+        </ul>
+      </section>
+
+      <!-- WEEK 4 -->
+      <section id="week4" class="section">
+        <h2>Week 4 — Memory</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 4</span>
+            <h3>Pointers, malloc &amp; File I/O</h3>
+          </div>
+          <p>Peek under the hood of your programs. Learn how data lives in <strong>memory (RAM)</strong>, use <strong>pointers</strong> to access memory addresses directly, allocate memory dynamically with <code>malloc</code>, and read/write <strong>files</strong>.</p>
+          <div class="week-topics">
+            <span class="topic-tag">Hexadecimal</span>
+            <span class="topic-tag">Pointers</span>
+            <span class="topic-tag">Strings as Pointers</span>
+            <span class="topic-tag">Dynamic Memory</span>
+            <span class="topic-tag">malloc / free</span>
+            <span class="topic-tag">File I/O</span>
+            <span class="topic-tag">Memory Leaks</span>
+          </div>
+          <span class="pset-badge">📝 Pset: Memory — Filter, Recover, Volume</span>
+        </div>
+
+        <h3>Understanding Pointers</h3>
+        <pre><code><span class="type">int</span> n = <span class="num">50</span>;
+<span class="type">int</span> *p = &amp;n;    <span class="cm">// p stores the address of n</span>
+
+<span class="fn">printf</span>(<span class="str">"n = %i\n"</span>, n);      <span class="cm">// 50</span>
+<span class="fn">printf</span>(<span class="str">"p = %p\n"</span>, p);      <span class="cm">// 0x7fff5fbff6bc (address)</span>
+<span class="fn">printf</span>(<span class="str">"*p = %i\n"</span>, *p);   <span class="cm">// 50 (value at address)</span></code></pre>
+
+        <h3>Dynamic Memory Allocation</h3>
+        <pre><code><span class="type">int</span> *list = <span class="fn">malloc</span>(<span class="num">3</span> * <span class="kw">sizeof</span>(<span class="type">int</span>));
+<span class="kw">if</span> (list == <span class="kw">NULL</span>)
+{
+    <span class="kw">return</span> <span class="num">1</span>;  <span class="cm">// out of memory</span>
+}
+list[<span class="num">0</span>] = <span class="num">1</span>;
+list[<span class="num">1</span>] = <span class="num">2</span>;
+list[<span class="num">2</span>] = <span class="num">3</span>;
+<span class="fn">free</span>(list);  <span class="cm">// always free what you malloc!</span></code></pre>
+
+        <h3>Problem Sets</h3>
+        <ul>
+          <li><strong>Filter (Less/More)</strong> — Apply grayscale, blur, or edge detection filters to BMP images by manipulating pixels in memory.</li>
+          <li><strong>Recover</strong> — Forensically recover deleted JPEG photos from a raw memory card dump.</li>
+          <li><strong>Volume</strong> — Adjust the volume of a WAV audio file by modifying amplitude values.</li>
+        </ul>
+
+        <div class="callout warn">
+          <strong>Memory errors are common here</strong>
+          Segmentation faults, buffer overflows, and memory leaks appear frequently. Always check return values of <code>malloc</code>, free allocated memory, and use <code>valgrind</code> to detect leaks.
+        </div>
+      </section>
+
+      <!-- WEEK 5 -->
+      <section id="week5" class="section">
+        <h2>Week 5 — Data Structures</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 5</span>
+            <h3>Linked Lists, Hash Tables &amp; Tries</h3>
+          </div>
+          <p>Move beyond arrays to more flexible data structures. Build <strong>linked lists</strong>, implement <strong>hash tables</strong> for fast lookups, and explore <strong>tries</strong> for efficient string storage.</p>
+          <div class="week-topics">
+            <span class="topic-tag">Linked Lists</span>
+            <span class="topic-tag">Stacks &amp; Queues</span>
+            <span class="topic-tag">Hash Tables</span>
+            <span class="topic-tag">Hash Functions</span>
+            <span class="topic-tag">Tries</span>
+            <span class="topic-tag">Abstract Data Types</span>
+          </div>
+          <span class="pset-badge">📝 Pset: Speller (capstone C pset)</span>
+        </div>
+
+        <h3>Linked List Node</h3>
+        <pre><code><span class="kw">typedef struct</span> node
+{
+    <span class="type">int</span> number;
+    <span class="kw">struct</span> node *next;
+} node;
+
+<span class="cm">// Insert at front</span>
+node *list = <span class="kw">NULL</span>;
+node *n = <span class="fn">malloc</span>(<span class="kw">sizeof</span>(node));
+n-&gt;number = <span class="num">2</span>;
+n-&gt;next = list;
+list = n;</code></pre>
+
+        <h3>Hash Table</h3>
+        <p>A hash table maps keys to buckets using a hash function. Collisions (two keys mapping to the same bucket) are handled with chaining (linked lists at each bucket).</p>
+        <pre><code><span class="cm">// Simple hash function for strings</span>
+<span class="type">unsigned int</span> <span class="fn">hash</span>(<span class="kw">const</span> <span class="type">char</span> *word)
+{
+    <span class="kw">return</span> <span class="fn">tolower</span>(word[<span class="num">0</span>]) - <span class="str">'a'</span>;
+}
+<span class="cm">// "cat" → bucket 2, "dog" → bucket 3</span></code></pre>
+
+        <h3>Problem Set: Speller</h3>
+        <p>The capstone C problem set. Implement a spell checker that loads a dictionary into memory and checks if words in a text file are spelled correctly. Choose your data structure:</p>
+        <ul>
+          <li><strong>Hash table</strong> — most popular choice, good balance of speed and memory</li>
+          <li><strong>Trie</strong> — fastest lookup, but uses more memory</li>
+          <li><strong>Linked list</strong> — simplest, but too slow for large dictionaries</li>
+        </ul>
+      </section>
+
+      <!-- WEEK 6 -->
+      <section id="week6" class="section">
+        <h2>Week 6 — Python</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 6</span>
+            <h3>Programming in Python</h3>
+          </div>
+          <p>After weeks of C's verbosity, <strong>Python</strong> feels like a breath of fresh air. Same concepts — variables, loops, functions — but with dramatically less code. CS50 uses this transition to reinforce that you were learning ideas, not just C syntax.</p>
+          <div class="week-topics">
+            <span class="topic-tag">Python Syntax</span>
+            <span class="topic-tag">Lists &amp; Dictionaries</span>
+            <span class="topic-tag">List Comprehensions</span>
+            <span class="topic-tag">Exceptions</span>
+            <span class="topic-tag">Libraries &amp; APIs</span>
+            <span class="topic-tag">Unit Tests</span>
+          </div>
+          <span class="pset-badge">📝 Pset: Python — Hello, Mario, Credit, Readability</span>
+        </div>
+
+        <h3>C vs Python Comparison</h3>
+        <pre><code><span class="cm"># C (Week 1 Mario)</span>
+<span class="kw">for</span> (<span class="type">int</span> i = <span class="num">0</span>; i &lt; height; i++)
+{
+    <span class="kw">for</span> (<span class="type">int</span> j = <span class="num">0</span>; j &lt; height - i - <span class="num">1</span>; j++)
+        <span class="fn">printf</span>(<span class="str">" "</span>);
+    <span class="kw">for</span> (<span class="type">int</span> j = <span class="num">0</span>; j &lt; i + <span class="num">2</span>; j++)
+        <span class="fn">printf</span>(<span class="str">"#"</span>);
+    <span class="fn">printf</span>(<span class="str">"\n"</span>);
+}
+
+<span class="cm"># Python equivalent</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(height):
+    <span class="fn">print</span>(<span class="str">" "</span> * (height - i - <span class="num">1</span>) + <span class="str">"#"</span> * (i + <span class="num">2</span>))</code></pre>
+
+        <h3>Python Features</h3>
+        <ul>
+          <li><strong>No type declarations</strong> — dynamic typing</li>
+          <li><strong>Indentation</strong> — whitespace defines code blocks (no braces)</li>
+          <li><strong>Built-in data structures</strong> — lists, dicts, sets, tuples</li>
+          <li><strong>Exceptions</strong> — <code>try/except</code> for error handling</li>
+          <li><strong>Rich standard library</strong> — <code>sys</code>, <code>csv</code>, <code>json</code>, <code>requests</code></li>
+        </ul>
+
+        <h3>Problem Sets</h3>
+        <p>You re-implement earlier C psets in Python (Hello, Mario, Credit, Readability) plus new ones. The focus shifts from memory management to clean, Pythonic code and testing.</p>
+      </section>
+
+      <!-- WEEK 7 -->
+      <section id="week7" class="section">
+        <h2>Week 7 — SQL</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 7</span>
+            <h3>Relational Databases &amp; SQL</h3>
+          </div>
+          <p>Learn to store, query, and manage structured data with <strong>SQL</strong> (Structured Query Language) and <strong>SQLite</strong>, a lightweight relational database.</p>
+          <div class="week-topics">
+            <span class="topic-tag">Tables &amp; Rows</span>
+            <span class="topic-tag">Primary &amp; Foreign Keys</span>
+            <span class="topic-tag">SELECT, INSERT, UPDATE, DELETE</span>
+            <span class="topic-tag">JOINs</span>
+            <span class="topic-tag">Indexes</span>
+            <span class="topic-tag">Normalization</span>
+          </div>
+          <span class="pset-badge">📝 Pset: Movies (SQL queries)</span>
+        </div>
+
+        <h3>Core SQL Commands</h3>
+        <pre><code><span class="cm">-- Create a table</span>
+<span class="kw">CREATE TABLE</span> users (
+    id <span class="type">INTEGER PRIMARY KEY AUTOINCREMENT</span>,
+    name <span class="type">TEXT NOT NULL</span>,
+    email <span class="type">TEXT UNIQUE</span>
+);
+
+<span class="cm">-- Insert data</span>
+<span class="kw">INSERT INTO</span> users (name, email) <span class="kw">VALUES</span> (<span class="str">'Alice'</span>, <span class="str">'alice@example.com'</span>);
+
+<span class="cm">-- Query data</span>
+<span class="kw">SELECT</span> name, email <span class="kw">FROM</span> users <span class="kw">WHERE</span> name <span class="kw">LIKE</span> <span class="str">'A%'</span>;
+
+<span class="cm">-- Join tables</span>
+<span class="kw">SELECT</span> movies.title, ratings.rating
+<span class="kw">FROM</span> movies
+<span class="kw">JOIN</span> ratings <span class="kw">ON</span> movies.id = ratings.movie_id
+<span class="kw">WHERE</span> ratings.rating &gt;= <span class="num">8</span>;</code></pre>
+
+        <h3>Database Design Principles</h3>
+        <ul>
+          <li><strong>Primary keys</strong> — uniquely identify each row</li>
+          <li><strong>Foreign keys</strong> — link tables together (referential integrity)</li>
+          <li><strong>Normalization</strong> — reduce redundancy by splitting data into related tables</li>
+          <li><strong>Indexes</strong> — speed up queries at the cost of write performance</li>
+        </ul>
+
+        <h3>Problem Set: Movies</h3>
+        <p>Write SQL queries against an IMDb-like database to answer questions about movies, actors, and ratings. Pure SQL — no Python required.</p>
+      </section>
+
+      <!-- WEEK 8 -->
+      <section id="week8" class="section">
+        <h2>Week 8 — HTML, CSS, JavaScript</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 8</span>
+            <h3>Front-End Web Development</h3>
+          </div>
+          <p>Build interactive web pages using the three pillars of front-end development: <strong>HTML</strong> for structure, <strong>CSS</strong> for styling, and <strong>JavaScript</strong> for interactivity.</p>
+          <div class="week-topics">
+            <span class="topic-tag">HTML Tags</span>
+            <span class="topic-tag">CSS Selectors</span>
+            <span class="topic-tag">Flexbox &amp; Grid</span>
+            <span class="topic-tag">DOM</span>
+            <span class="topic-tag">Events</span>
+            <span class="topic-tag">Fetch API</span>
+          </div>
+          <span class="pset-badge">📝 Pset: Homepage (personal website)</span>
+        </div>
+
+        <h3>HTML Structure</h3>
+        <pre><code><span class="kw">&lt;!DOCTYPE html&gt;</span>
+<span class="kw">&lt;html</span> <span class="type">lang</span>=<span class="str">"en"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;title&gt;</span>My Page<span class="kw">&lt;/title&gt;</span>
+    <span class="kw">&lt;link</span> <span class="type">rel</span>=<span class="str">"stylesheet"</span> <span class="type">href</span>=<span class="str">"styles.css"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+    <span class="kw">&lt;header&gt;</span><span class="kw">&lt;h1&gt;</span>Welcome<span class="kw">&lt;/h1&gt;&lt;/header&gt;</span>
+    <span class="kw">&lt;main&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Hello, world!<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/main&gt;</span>
+    <span class="kw">&lt;script</span> <span class="type">src</span>=<span class="str">"script.js"</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre>
+
+        <h3>JavaScript DOM Manipulation</h3>
+        <pre><code><span class="cm">// Select an element and respond to clicks</span>
+<span class="kw">const</span> button = document.<span class="fn">querySelector</span>(<span class="str">"button"</span>);
+button.<span class="fn">addEventListener</span>(<span class="str">"click"</span>, () =&gt; {
+    document.<span class="fn">querySelector</span>(<span class="str">"h1"</span>).textContent = <span class="str">"Clicked!"</span>;
+});
+
+<span class="cm">// Fetch data from an API</span>
+<span class="kw">async function</span> <span class="fn">getWeather</span>(city) {
+    <span class="kw">const</span> response = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">`/api/weather?q=</span>${city}<span class="str">`</span>);
+    <span class="kw">const</span> data = <span class="kw">await</span> response.<span class="fn">json</span>();
+    <span class="kw">return</span> data;
+}</code></pre>
+
+        <h3>Problem Set: Homepage</h3>
+        <p>Build a personal homepage with at least 4 HTML pages linked together, styled with CSS (including responsive design with media queries), and interactive elements with JavaScript.</p>
+      </section>
+
+      <!-- WEEK 9 -->
+      <section id="week9" class="section">
+        <h2>Week 9 — Flask</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 9</span>
+            <h3>Back-End Web Programming</h3>
+          </div>
+          <p>Move to the server side with <strong>Flask</strong>, a lightweight Python web framework. Learn about HTTP, routes, templates, sessions, and connecting to databases.</p>
+          <div class="week-topics">
+            <span class="topic-tag">HTTP Methods</span>
+            <span class="topic-tag">Routes</span>
+            <span class="topic-tag">Jinja2 Templates</span>
+            <span class="topic-tag">Sessions &amp; Cookies</span>
+            <span class="topic-tag">Flask-SQLAlchemy</span>
+            <span class="topic-tag">Authentication</span>
+          </div>
+          <span class="pset-badge">📝 Pset: Finance (stock portfolio app)</span>
+        </div>
+
+        <h3>Basic Flask App</h3>
+        <pre><code><span class="kw">from</span> flask <span class="kw">import</span> Flask, render_template, request
+
+app = Flask(__name__)
+
+<span class="fn">@app.route</span>(<span class="str">"/"</span>)
+<span class="kw">def</span> <span class="fn">index</span>():
+    <span class="kw">return</span> render_template(<span class="str">"index.html"</span>)
+
+<span class="fn">@app.route</span>(<span class="str">"/greet"</span>, methods=[<span class="str">"POST"</span>])
+<span class="kw">def</span> <span class="fn">greet</span>():
+    name = request.form.get(<span class="str">"name"</span>)
+    <span class="kw">return</span> render_template(<span class="str">"greet.html"</span>, name=name)</code></pre>
+
+        <h3>Problem Set: Finance</h3>
+        <p>Build a web application where users can:</p>
+        <ul>
+          <li>Register and log in (with hashed passwords)</li>
+          <li>Look up stock quotes via an API</li>
+          <li>Buy and sell stocks</li>
+          <li>View their transaction history and portfolio</li>
+        </ul>
+        <p>This pset combines Flask, SQL, HTML/CSS/JS, and API integration — a mini full-stack project.</p>
+      </section>
+
+      <!-- WEEK 10 -->
+      <section id="week10" class="section">
+        <h2>Week 10 — The End</h2>
+        <div class="week-card">
+          <div class="week-card-header">
+            <span class="week-badge">Week 10</span>
+            <h3>Ethics, Security, AI &amp; What's Next</h3>
+          </div>
+          <p>The final lecture wraps up the course with discussions on the societal impact of computing, cybersecurity fundamentals, and the rise of artificial intelligence.</p>
+          <div class="week-topics">
+            <span class="topic-tag">Cybersecurity</span>
+            <span class="topic-tag">Encryption</span>
+            <span class="topic-tag">Two-Factor Auth</span>
+            <span class="topic-tag">Artificial Intelligence</span>
+            <span class="topic-tag">Ethics in CS</span>
+            <span class="topic-tag">Career Paths</span>
+          </div>
+        </div>
+
+        <h3>Topics Covered</h3>
+        <ul>
+          <li><strong>Security</strong> — passwords, hashing, encryption (symmetric &amp; asymmetric), HTTPS, SQL injection, XSS</li>
+          <li><strong>Artificial Intelligence</strong> — machine learning basics, neural networks, LLMs, responsible AI use</li>
+          <li><strong>Ethics</strong> — privacy, data collection, algorithmic bias, intellectual property</li>
+          <li><strong>What's Next</strong> — CS50 AI, CS50 Web, CS50 Cybersecurity, and other follow-up courses</li>
+        </ul>
+
+        <div class="callout info">
+          <strong>You made it!</strong>
+          After Week 10, you'll work on your Final Project — the capstone where you build something entirely your own.
+        </div>
+      </section>
+
+      <!-- PROBLEM SETS -->
+      <section id="psets" class="section">
+        <h2>Problem Sets Guide</h2>
+        <p class="lead">Problem sets (psets) are the heart of CS50. Here's a detailed guide to every pset, its difficulty, and what it teaches.</p>
+
+        <table>
+          <thead><tr><th>Pset</th><th>Week</th><th>Language</th><th>Difficulty</th><th>Key Skills</th></tr></thead>
+          <tbody>
+            <tr><td>Scratch</td><td>0</td><td>Scratch</td><td>⭐ Easy</td><td>Events, loops, functions</td></tr>
+            <tr><td>C (Mario, Cash, Credit)</td><td>1</td><td>C</td><td>⭐⭐ Medium</td><td>Loops, conditionals, algorithms</td></tr>
+            <tr><td>Arrays (Readability, Caesar, Sub)</td><td>2</td><td>C</td><td>⭐⭐ Medium</td><td>Strings, arrays, cryptography</td></tr>
+            <tr><td>Sort (Plurality, Runoff, Tideman)</td><td>3</td><td>C</td><td>⭐⭐⭐ Hard</td><td>Algorithms, data structures, graphs</td></tr>
+            <tr><td>Memory (Filter, Recover, Volume)</td><td>4</td><td>C</td><td>⭐⭐⭐ Hard</td><td>Pointers, file I/O, image processing</td></tr>
+            <tr><td>Speller</td><td>5</td><td>C</td><td>⭐⭐⭐⭐ Very Hard</td><td>Hash tables, data structure design</td></tr>
+            <tr><td>Python</td><td>6</td><td>Python</td><td>⭐⭐ Medium</td><td>Python syntax, testing, APIs</td></tr>
+            <tr><td>Movies</td><td>7</td><td>SQL</td><td>⭐⭐ Medium</td><td>SQL queries, joins, subqueries</td></tr>
+            <tr><td>Homepage</td><td>8</td><td>HTML/CSS/JS</td><td>⭐⭐ Medium</td><td>Web design, responsive layout</td></tr>
+            <tr><td>Finance</td><td>9</td><td>Flask/Python</td><td>⭐⭐⭐ Hard</td><td>Full-stack web, auth, APIs</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Grading Criteria</h3>
+        <ul>
+          <li><strong>Correctness</strong> — Does it pass all <code>check50</code> tests?</li>
+          <li><strong>Design</strong> — Is the code well-organized and efficient?</li>
+          <li><strong>Style</strong> — Does it pass <code>style50</code> (indentation, naming, comments)?</li>
+        </ul>
+
+        <div class="callout tip">
+          <strong>Start early, submit often</strong>
+          Run <code>check50</code> frequently as you work. Don't wait until the last minute — psets always take longer than expected.
+        </div>
+      </section>
+
+      <!-- ALGORITHMS -->
+      <section id="algorithms" class="section">
+        <h2>Algorithms &amp; Big O Notation</h2>
+        <p class="lead">Big O describes how the runtime or space requirements of an algorithm grow as input size increases.</p>
+
+        <div class="complexity-grid">
+          <div class="complexity-item">
+            <div class="notation">O(1)</div>
+            <div class="name">Constant</div>
+            <div class="complexity-bar" style="width:10%;background:var(--accent)"></div>
+          </div>
+          <div class="complexity-item">
+            <div class="notation">O(log n)</div>
+            <div class="name">Logarithmic</div>
+            <div class="complexity-bar" style="width:20%;background:var(--accent-light)"></div>
+          </div>
+          <div class="complexity-item">
+            <div class="notation">O(n)</div>
+            <div class="name">Linear</div>
+            <div class="complexity-bar" style="width:40%;background:var(--gold)"></div>
+          </div>
+          <div class="complexity-item">
+            <div class="notation">O(n log n)</div>
+            <div class="name">Log-linear</div>
+            <div class="complexity-bar" style="width:60%;background:#e9c46a"></div>
+          </div>
+          <div class="complexity-item">
+            <div class="notation">O(n²)</div>
+            <div class="name">Quadratic</div>
+            <div class="complexity-bar" style="width:80%;background:#f4a261"></div>
+          </div>
+          <div class="complexity-item">
+            <div class="notation">O(2ⁿ)</div>
+            <div class="name">Exponential</div>
+            <div class="complexity-bar" style="width:100%;background:var(--crimson)"></div>
+          </div>
+        </div>
+
+        <h3>Common Algorithm Complexities</h3>
+        <table>
+          <thead><tr><th>Operation</th><th>Best Case</th><th>Average</th><th>Worst Case</th></tr></thead>
+          <tbody>
+            <tr><td>Linear search</td><td>O(1)</td><td>O(n)</td><td>O(n)</td></tr>
+            <tr><td>Binary search</td><td>O(1)</td><td>O(log n)</td><td>O(log n)</td></tr>
+            <tr><td>Bubble sort</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td></tr>
+            <tr><td>Merge sort</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td></tr>
+            <tr><td>Hash table lookup</td><td>O(1)</td><td>O(1)</td><td>O(n)</td></tr>
+            <tr><td>Trie lookup</td><td>O(1)</td><td>O(k)</td><td>O(k)</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Why It Matters</h3>
+        <p>Understanding Big O helps you choose the right algorithm for the job. Searching 1 million items with linear search takes up to 1 million steps. With binary search (on sorted data), it takes at most ~20 steps. That difference is the foundation of scalable software.</p>
+      </section>
+
+      <!-- DATA STRUCTURES -->
+      <section id="datastructures" class="section">
+        <h2>Data Structures Reference</h2>
+        <p class="lead">Data structures are ways of organizing data in memory. Choosing the right one can make your program orders of magnitude faster.</p>
+
+        <div class="card-grid">
+          <div class="card">
+            <strong>Array</strong>
+            <p class="desc">Fixed-size, contiguous memory. O(1) access by index, O(n) insert/delete. Foundation of everything in C.</p>
+          </div>
+          <div class="card">
+            <strong>Linked List</strong>
+            <p class="desc">Nodes connected by pointers. O(n) access, O(1) insert/delete at head. Dynamic size, no wasted space.</p>
+          </div>
+          <div class="card">
+            <strong>Stack</strong>
+            <p class="desc">Last-In-First-Out (LIFO). Push and pop from the top. Used in function calls, undo operations, parsing.</p>
+          </div>
+          <div class="card">
+            <strong>Queue</strong>
+            <p class="desc">First-In-First-Out (FIFO). Enqueue at back, dequeue from front. Used in scheduling, BFS traversal.</p>
+          </div>
+          <div class="card">
+            <strong>Hash Table</strong>
+            <p class="desc">Key-value store with O(1) average lookup. Uses a hash function to map keys to buckets. Handles collisions with chaining.</p>
+          </div>
+          <div class="card">
+            <strong>Trie</strong>
+            <p class="desc">Tree for storing strings. Each node is a letter. O(k) lookup where k is word length. Used in autocomplete, spell checkers.</p>
+          </div>
+        </div>
+
+        <h3>When to Use What</h3>
+        <table>
+          <thead><tr><th>Need</th><th>Best Choice</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>Fast lookup by index</td><td>Array</td><td>O(1) random access</td></tr>
+            <tr><td>Fast lookup by key</td><td>Hash Table</td><td>O(1) average case</td></tr>
+            <tr><td>Prefix search / autocomplete</td><td>Trie</td><td>Efficient prefix matching</td></tr>
+            <tr><td>Dynamic size, frequent insert</td><td>Linked List</td><td>O(1) insert at known position</td></tr>
+            <tr><td>Undo/redo functionality</td><td>Stack</td><td>LIFO matches undo semantics</td></tr>
+            <tr><td>Task scheduling</td><td>Queue</td><td>FIFO ensures fairness</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- MEMORY -->
+      <section id="memory" class="section">
+        <h2>Memory &amp; Pointers</h2>
+        <p class="lead">Understanding memory is what separates CS50 graduates from casual coders. This is the hardest but most rewarding part of the course.</p>
+
+        <h3>Memory Layout</h3>
+        <p>When a C program runs, memory is organized into segments:</p>
+        <table>
+          <thead><tr><th>Segment</th><th>Contents</th><th>Grows</th></tr></thead>
+          <tbody>
+            <tr><td>Text (Code)</td><td>Your compiled machine instructions</td><td>—</td></tr>
+            <tr><td>Global / Static</td><td>Global variables, string literals</td><td>—</td></tr>
+            <tr><td>Heap</td><td>Dynamically allocated memory (<code>malloc</code>)</td><td>↑ upward</td></tr>
+            <tr><td>Stack</td><td>Local variables, function call frames</td><td>↓ downward</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Common Memory Errors</h3>
+        <ul>
+          <li><strong>Segmentation fault</strong> — accessing memory you don't own (null pointer, out of bounds)</li>
+          <li><strong>Memory leak</strong> — allocating with <code>malloc</code> but never calling <code>free</code></li>
+          <li><strong>Buffer overflow</strong> — writing past the end of an allocated block</li>
+          <li><strong>Use after free</strong> — accessing memory after it's been freed</li>
+          <li><strong>Double free</strong> — calling <code>free</code> on the same pointer twice</li>
+        </ul>
+
+        <h3>Debugging Memory with Valgrind</h3>
+        <pre><code><span class="cm"># Compile with debug symbols</span>
+<span class="fn">make</span> speller
+
+<span class="cm"># Check for memory leaks</span>
+<span class="fn">valgrind</span> --leak-check=full ./speller texts/cat.txt</code></pre>
+
+        <div class="callout warn">
+          <strong>Always free what you malloc</strong>
+          Every <code>malloc</code> call should have a corresponding <code>free</code>. Valgrind is your best friend for finding leaks.
+        </div>
+      </section>
+
+      <!-- TOOLS -->
+      <section id="tools" class="section">
+        <h2>CS50 Tools</h2>
+        <p class="lead">CS50 provides a suite of command-line tools to help you write, test, style, and submit your code.</p>
+
+        <div class="card-grid">
+          <div class="card">
+            <strong>check50</strong>
+            <p class="desc">Runs automated tests against your code. Shows green checks for passing tests and red X's for failures with helpful error messages.</p>
+            <pre style="margin-top:0.75rem;font-size:0.8rem"><code>check50 cs50/problems/2024/x/mario/less</code></pre>
+          </div>
+          <div class="card">
+            <strong>style50</strong>
+            <p class="desc">Checks your code style — indentation, spacing, variable naming. Good style makes code readable and maintainable.</p>
+            <pre style="margin-top:0.75rem;font-size:0.8rem"><code>style50 mario.c</code></pre>
+          </div>
+          <div class="card">
+            <strong>submit50</strong>
+            <p class="desc">Submits your code to GitHub for grading. Creates a repository under the CS50 organization.</p>
+            <pre style="margin-top:0.75rem;font-size:0.8rem"><code>submit50 cs50/problems/2024/x/mario/less</code></pre>
+          </div>
+          <div class="card">
+            <strong>debug50</strong>
+            <p class="desc">Launches an interactive debugger (gdb) with your program. Set breakpoints, step through code, inspect variables.</p>
+            <pre style="margin-top:0.75rem;font-size:0.8rem"><code>debug50 ./mario</code></pre>
+          </div>
+          <div class="card">
+            <strong>cs50.ai</strong>
+            <p class="desc">CS50's AI-powered teaching assistant. Ask questions about lectures, psets, and concepts. Available on the course website.</p>
+          </div>
+          <div class="card">
+            <strong>CS50 Codespace</strong>
+            <p class="desc">Cloud-based development environment (VS Code in browser). All tools pre-installed. No local setup needed.</p>
+          </div>
+        </div>
+
+        <h3>Typical Workflow</h3>
+        <pre><code><span class="cm"># 1. Write your code</span>
+<span class="fn">code</span> mario.c
+
+<span class="cm"># 2. Compile and test locally</span>
+<span class="fn">make</span> mario
+<span class="fn">./mario</span>
+
+<span class="cm"># 3. Check style</span>
+<span class="fn">style50</span> mario.c
+
+<span class="cm"># 4. Run automated tests</span>
+<span class="fn">check50</span> cs50/problems/2024/x/mario/less
+
+<span class="cm"># 5. Submit for grading</span>
+<span class="fn">submit50</span> cs50/problems/2024/x/mario/less</code></pre>
+      </section>
+
+      <!-- WEB -->
+      <section id="web" class="section">
+        <h2>Web Development Stack</h2>
+        <p class="lead">Weeks 8–9 introduce the full web development stack you'll use in CS50 and beyond.</p>
+
+        <h3>How the Web Works</h3>
+        <ol>
+          <li>Browser sends an <strong>HTTP request</strong> to a server (e.g., GET /index.html)</li>
+          <li>Server processes the request (runs Python/Flask code, queries database)</li>
+          <li>Server sends back an <strong>HTTP response</strong> (HTML, JSON, etc.)</li>
+          <li>Browser renders the response and runs JavaScript</li>
+        </ol>
+
+        <h3>The CS50 Web Stack</h3>
+        <table>
+          <thead><tr><th>Layer</th><th>Technology</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>Front-end structure</td><td>HTML</td><td>Page content and semantics</td></tr>
+            <tr><td>Front-end styling</td><td>CSS</td><td>Layout, colors, responsive design</td></tr>
+            <tr><td>Front-end logic</td><td>JavaScript</td><td>Interactivity, DOM manipulation, API calls</td></tr>
+            <tr><td>Back-end framework</td><td>Flask (Python)</td><td>Routes, business logic, templates</td></tr>
+            <tr><td>Database</td><td>SQLite + SQL</td><td>Persistent data storage</td></tr>
+            <tr><td>Templates</td><td>Jinja2</td><td>Dynamic HTML generation on server</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Key HTTP Methods</h3>
+        <ul>
+          <li><strong>GET</strong> — retrieve data (loading a page, fetching API data)</li>
+          <li><strong>POST</strong> — submit data (form submissions, creating records)</li>
+          <li><strong>PUT/PATCH</strong> — update existing data</li>
+          <li><strong>DELETE</strong> — remove data</li>
+        </ul>
+      </section>
+
+      <!-- FINAL PROJECT -->
+      <section id="final" class="section">
+        <h2>Final Project</h2>
+        <p class="lead">The capstone of CS50 — design and build a project entirely of your own choosing.</p>
+
+        <h3>Requirements</h3>
+        <ul>
+          <li>A working program with a user interface (CLI, web, GUI, or mobile)</li>
+          <li>Uses at least one language/framework from the course</li>
+          <li>Includes a README with documentation</li>
+          <li>A ~2 minute demo video showing your project in action</li>
+          <li>Source code submitted via GitHub</li>
+        </ul>
+
+        <h3>Project Ideas by Category</h3>
+        <div class="card-grid">
+          <div class="card">
+            <strong>🎮 Games</strong>
+            <p class="desc">Chess, Tetris, Snake, Connect Four, Trivia Quiz, Wordle clone, Platformer</p>
+          </div>
+          <div class="card">
+            <strong>📊 Productivity</strong>
+            <p class="desc">Budget tracker, habit builder, pomodoro timer, note-taking app, calendar</p>
+          </div>
+          <div class="card">
+            <strong>🌐 Social</strong>
+            <p class="desc">Chat app, event planner, recipe sharing, book review site, forum</p>
+          </div>
+          <div class="card">
+            <strong>🔬 Data &amp; ML</strong>
+            <p class="desc">Data visualizer, sentiment analyzer, image classifier, stock predictor</p>
+          </div>
+          <div class="card">
+            <strong>🛠️ Utilities</strong>
+            <p class="desc">File converter, password manager, URL shortener, markdown editor</p>
+          </div>
+          <div class="card">
+            <strong>🎵 Creative</strong>
+            <p class="desc">Music player, pixel art editor, meme generator, ASCII art tool</p>
+          </div>
+        </div>
+
+        <div class="callout tip">
+          <strong>Start early and scope wisely</strong>
+          Pick something you're passionate about, but keep the scope manageable. A polished small project beats an unfinished ambitious one.
+        </div>
+      </section>
+
+      <!-- STUDY TIPS -->
+      <section id="tips" class="section">
+        <h2>Study Tips &amp; Strategies</h2>
+        <p class="lead">CS50 is challenging but absolutely doable. Here are proven strategies from successful students.</p>
+
+        <div class="card-grid">
+          <div class="card">
+            <strong>📅 Start Psets Early</strong>
+            <p class="desc">Begin each problem set the day it's released. They routinely take 2–3x longer than you estimate.</p>
+          </div>
+          <div class="card">
+            <strong>📖 Read the Spec First</strong>
+            <p class="desc">Read the entire pset specification before writing any code. Understand requirements fully before implementing.</p>
+          </div>
+          <div class="card">
+            <strong>🦆 Rubber Duck Debug</strong>
+            <p class="desc">Explain your code line-by-line out loud (to a duck, a friend, or yourself). You'll often find the bug yourself.</p>
+          </div>
+          <div class="card">
+            <strong>🔍 Debug Systematically</strong>
+            <p class="desc">Use printf debugging, debug50, and valgrind. Don't randomly change code hoping it fixes things.</p>
+          </div>
+          <div class="card">
+            <strong>🔄 Rewatch Lectures</strong>
+            <p class="desc">It's normal to rewatch lectures, especially Weeks 4 and 5. Malan's explanations get clearer on second viewing.</p>
+          </div>
+          <div class="card">
+            <strong>🤝 Collaborate on Ideas</strong>
+            <p class="desc">Discuss approaches with classmates, but write your own code. CS50's academic honesty policy is strict about copying.</p>
+          </div>
+        </div>
+
+        <h3>When You're Stuck</h3>
+        <ol>
+          <li>Re-read the pset specification and lecture notes</li>
+          <li>Search the Ed forum and Stack Overflow for similar issues</li>
+          <li>Ask cs50.ai for hints (not full solutions)</li>
+          <li>Post on Discord or r/cs50 with your specific error</li>
+          <li>Attend office hours (virtual or in-person)</li>
+          <li>Take a break — fresh eyes solve bugs faster</li>
+        </ol>
+      </section>
+
+      <!-- COMMUNITY -->
+      <section id="community" class="section">
+        <h2>Community &amp; Resources</h2>
+        <p class="lead">You're not alone — millions of learners have taken CS50. Tap into the community.</p>
+
+        <div class="card-grid">
+          <div class="card">
+            <strong>Official Course Site</strong>
+            <p class="desc"><a href="https://cs50.harvard.edu/x/" target="_blank">cs50.harvard.edu/x</a> — lectures, notes, psets, and all course materials.</p>
+          </div>
+          <div class="card">
+            <strong>CS50 Discord</strong>
+            <p class="desc">Active community for asking questions, finding study partners, and sharing progress.</p>
+          </div>
+          <div class="card">
+            <strong>r/cs50 on Reddit</strong>
+            <p class="desc"><a href="https://reddit.com/r/cs50" target="_blank">reddit.com/r/cs50</a> — memes, help requests, success stories, and advice.</p>
+          </div>
+          <div class="card">
+            <strong>Ed Discussion</strong>
+            <p class="desc">Official course discussion board integrated with edX. Teaching staff answer questions here.</p>
+          </div>
+          <div class="card">
+            <strong>CS50 Reference</strong>
+            <p class="desc"><a href="https://cs50.readthedocs.io/" target="_blank">cs50.readthedocs.io</a> — documentation for the CS50 library and tools.</p>
+          </div>
+          <div class="card">
+            <strong>CS50 Manual Pages</strong>
+            <p class="desc"><a href="https://manual.cs50.io/" target="_blank">manual.cs50.io</a> — C standard library and CS50 library reference.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">Do I need prior programming experience?</button>
+          <div class="faq-answer"><p>No! CS50 is designed for beginners. Week 0 starts with Scratch, a visual programming language. If you can think logically, you can learn to code.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How long does CS50 take to complete?</button>
+          <div class="faq-answer"><p>The course runs 11 weeks at Harvard pace, but most online learners take 3–6 months working part-time (10–20 hours/week). There's no deadline — go at your own speed.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is CS50 really free?</button>
+          <div class="faq-answer"><p>Yes, auditing is completely free. You get access to all lectures, problem sets, and grading tools. A verified certificate through edX costs around $189 but is optional.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Which weeks are the hardest?</button>
+          <div class="faq-answer"><p>Weeks 4 (Memory) and 5 (Data Structures/Speller) are consistently rated the hardest. Week 3 (Tideman) is also challenging. Budget extra time for these weeks.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I use AI tools like ChatGPT?</button>
+          <div class="faq-answer"><p>CS50 provides its own AI assistant (cs50.ai) designed to give hints without giving away answers. Using external AI to generate solutions violates academic honesty. Use AI to understand concepts, not to write your psets.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What comes after CS50?</button>
+          <div class="faq-answer"><p>CS50 offers follow-up courses: CS50 AI (artificial intelligence), CS50 Web (advanced web development), CS50 Cybersecurity, and CS50 Business. Many students also move on to data structures courses, web dev bootcamps, or CS degrees.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Will CS50 help me get a job?</button>
+          <div class="faq-answer"><p>CS50 is highly respected by employers and gives you a strong foundation. However, it's an introductory course — you'll want to build a portfolio (including your final project) and potentially take follow-up courses for job readiness.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I skip Scratch (Week 0)?</button>
+          <div class="faq-answer"><p>It's not recommended. Week 0 introduces binary, algorithms, and computational thinking that underpin everything else. It's also the easiest week — a confidence builder before C gets serious.</p></div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATE -->
+      <section id="certificate" class="section">
+        <h2>Certificate &amp; Grading</h2>
+        <p class="lead">CS50x offers a free audit track and an optional verified certificate through edX.</p>
+
+        <h3>Audit (Free)</h3>
+        <ul>
+          <li>Access to all course materials</li>
+          <li>Automated grading via check50</li>
+          <li>Community support</li>
+          <li>No certificate, no deadline</li>
+        </ul>
+
+        <h3>Verified Certificate (~$189)</h3>
+        <ul>
+          <li>Everything in the audit track</li>
+          <li>Official edX/Harvard certificate upon passing</li>
+          <li>Identity verification required</li>
+          <li>Must score 70%+ on labs, problem sets, and final project</li>
+        </ul>
+
+        <h3>Grading Breakdown</h3>
+        <table>
+          <thead><tr><th>Component</th><th>Weight</th></tr></thead>
+          <tbody>
+            <tr><td>Labs (weekly exercises)</td><td>15%</td></tr>
+            <tr><td>Problem Sets</td><td>55%</td></tr>
+            <tr><td>Final Project</td><td>30%</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout info">
+          <strong>The real reward</strong>
+          Whether or not you pay for a certificate, the knowledge and skills you gain are the real prize. Focus on learning, not the credential.
+        </div>
+      </section>
+
+      <!-- SHOW ALL -->
+      <section id="all" class="section">
+        <h2>Complete Guide</h2>
+        <p class="lead">All sections displayed below. Use the sidebar to jump to individual topics.</p>
+        <div id="all-content"></div>
+      </section>
+
+      <footer>
+        <p>CS50 Explainer — an unofficial guide to Harvard's Introduction to Computer Science.</p>
+        <p>Course materials belong to CS50 and Harvard University. This site is for educational purposes.</p>
+        <p style="margin-top:0.5rem"><a href="https://cs50.harvard.edu/x/" target="_blank">Start learning at cs50.harvard.edu/x →</a></p>
+      </footer>
+    </main>
   </div>
 
-  <!-- NAVBAR -->
-  <header class="nav-wrap">
-    <nav class="navbar container">
-      <a href="#home" class="brand">CS50 Rehberi</a>
-      <button id="burger" class="burger" aria-label="Menüyü aç">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="nav-link active">Ana Sayfa</a></li>
-        <li><a href="#about" class="nav-link">CS50 Hakkında</a></li>
-        <li><a href="#contents" class="nav-link">Ders İçerikleri</a></li>
-        <li><a href="#learn" class="nav-link">Neler Öğreneceksin?</a></li>
-        <li><a href="#instructor" class="nav-link">Eğitmen</a></li>
-        <li><a href="#faq" class="nav-link">SSS</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <main>
-    <section id="home" class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1 class="title">CS50 Nedir?</h1>
-          <p class="lead">Harvard Üniversitesi'nin dünyaca ünlü bilgisayar bilimine giriş dersidir.</p>
-          <div class="hero-cta">
-            <a href="#contents" class="btn primary">Dersi Keşfet</a>
-            <a href="#about" class="btn ghost">Daha Fazla</a>
-          </div>
-        </div>
-        <div class="hero-card glass reveal">
-          <h3>Hızlı Özet</h3>
-          <p>Programlama, algoritmalar ve gerçek dünya projeleriyle derin öğrenme.</p>
-          <div class="stats">
-            <div class="stat">
-              <div class="counter" data-target="12">0</div>
-              <div class="label">Bölüm</div>
-            </div>
-            <div class="stat">
-              <div class="counter" data-target="200">0</div>
-              <div class="label">Saat</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title">CS50 Hakkında</h2>
-        <div class="about-grid">
-          <div class="glass about-card reveal">
-            <h3>Amaç</h3>
-            <p>Bilgisayar bilimine güçlü bir giriş sağlayarak problem çözme yeteneğini geliştirmek.</p>
-          </div>
-          <div class="glass about-card reveal">
-            <h3>Kimler İçin</h3>
-            <p>Her seviyeden öğrenici; ön bilgi gerekmez ancak azim ve merak önemlidir.</p>
-          </div>
-          <div class="glass about-card reveal">
-            <h3>Neden Popüler</h3>
-            <p>Etkileyici projeler, zorlu sınavlar ve dünya çapında tanınan eğitmenlik.</p>
-          </div>
-          <div class="glass about-card reveal">
-            <h3>Öğreneceğin Beceriler</h3>
-            <ul>
-              <li>Programlama temelleri</li>
-              <li>Algoritma tasarımı</li>
-              <li>Web geliştirme ve veri yapıları</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTENTS -->
-    <section id="contents" class="section">
-      <div class="container">
-        <h2 class="section-title">Ders İçerikleri</h2>
-        <div class="cards-grid">
-          <!-- Card template -->
-          <article class="glass card reveal">
-            <div class="card-head">🔹 Scratch</div>
-            <p>Blok tabanlı programlama ile mantık ve akış kontrolü öğrenme.</p>
-          </article>
-          <article class="glass card reveal">
-            <div class="card-head">🔹 C Programlama</div>
-            <p>Düşük seviyeye yakın programlama ve bellek modelini anlama.</p>
-          </article>
-          <article class="glass card reveal">
-            <div class="card-head">🔹 Algoritmalar</div>
-            <p>Sıralama, arama ve karmaşıklık analizleri.</p>
-          </article>
-          <article class="glass card reveal">
-            <div class="card-head">🔹 Bellek Yönetimi</div>
-            <p>Pointer'lar, stack ve heap davranışları.</p>
-          </article>
-          <article class="glass card reveal">
-            <div class="card-head">🔹 Veri Yapıları</div>
-            <p>Dizinler, bağlı listeler, ağaçlar ve yığın/kuyruk.</p>
-          </article>
-          <article class="glass card reveal">
-            <div class="card-head">🔹 Python</div>
-            <p>Hızlı prototipleme ve yüksek seviyeli programlama becerileri.</p>
-          </article>
-          <article class="glass card reveal">
-            <div class="card-head">🔹 SQL</div>
-            <p>Veritabanı sorgulama ve ilişkisel model.</p>
-          </article>
-          <article class="glass card reveal">
-            <div class="card-head">🔹 HTML & CSS</div>
-            <p>Temel web sayfası tasarımı ve stillendirme.</p>
-          </article>
-          <article class="glass card reveal">
-            <div class="card-head">🔹 JavaScript</div>
-            <p>İnteraktif web uygulamaları için istemci tarafı programlama.</p>
-          </article>
-          <article class="glass card reveal">
-            <div class="card-head">🔹 Flask</div>
-            <p>Basit Python tabanlı web sunucusu ve arka uç geliştirme.</p>
-          </article>
-          <article class="glass card reveal">
-            <div class="card-head">🔹 Final Project</div>
-            <p>Kendi projenizi tasarlayıp uygulama deneyimi.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- LEARN -->
-    <section id="learn" class="section">
-      <div class="container">
-        <h2 class="section-title">Neler Öğreneceksin?</h2>
-        <div class="icon-grid">
-          <div class="icon-item glass reveal">
-            <div class="icon">🧠</div>
-            <h4>Problem çözme</h4>
-          </div>
-          <div class="icon-item glass reveal">
-            <div class="icon">⚙️</div>
-            <h4>Algoritmik düşünme</h4>
-          </div>
-          <div class="icon-item glass reveal">
-            <div class="icon">🔰</div>
-            <h4>Programlama temelleri</h4>
-          </div>
-          <div class="icon-item glass reveal">
-            <div class="icon">🌐</div>
-            <h4>Web geliştirme</h4>
-          </div>
-          <div class="icon-item glass reveal">
-            <div class="icon">🗄️</div>
-            <h4>Veritabanı kullanımı</h4>
-          </div>
-          <div class="icon-item glass reveal">
-            <div class="icon">🤖</div>
-            <h4>Yapay zekaya temel</h4>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INSTRUCTOR -->
-    <section id="instructor" class="section">
-      <div class="container instructor-grid">
-        <div class="glass instructor-card reveal">
-          <div class="avatar">DJ</div>
-          <h3>David J. Malan</h3>
-          <p>Kısa bilgi: Harvard Üniversitesi'nde profesör, etkileyici ders anlatımı ve zorlayıcı projelerle tanınır.</p>
-        </div>
-        <div class="glass instructor-info reveal">
-          <h2>Hakkında</h2>
-          <p>David Malan, bilgisayar bilimleri eğitiminde inovatif yaklaşımlarıyla bilinir. CS50 dersleri interaktif, zorlu ve proje odaklıdır.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section">
-      <div class="container">
-        <h2 class="section-title">SSS</h2>
-        <div class="accordion glass">
-          <button class="accordion-item">CS50 ücretsiz mi?<span class="chev">▸</span></button>
-          <div class="panel">Evet, kurs materyalleri genellikle ücretsizdir; bazı sertifika seçenekleri ücretli olabilir.</div>
-
-          <button class="accordion-item">İngilizce seviyesi gerekli mi?<span class="chev">▸</span></button>
-          <div class="panel">Ders İngilizce olduğu için temel İngilizce okuma dinleme yeterli olacaktır.</div>
-
-          <button class="accordion-item">Sertifika var mı?<span class="chev">▸</span></button>
-          <div class="panel">Coursera/edX gibi platformlarda sertifika seçenekleri mevcuttur (genelde ücretli).</div>
-
-          <button class="accordion-item">Ne kadar sürüyor?<span class="chev">▸</span></button>
-          <div class="panel">Kursa bağlı olarak tamamlama süresi değişir; genelde haftalık çalışma ile birkaç ay sürebilir.</div>
-
-          <button class="accordion-item">Zor mu?<span class="chev">▸</span></button>
-          <div class="panel">Evet, zorluk seviyesi yüksektir ama pratik ve tekrar ile aşılabilir.</div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- BACK TO TOP -->
-  <button id="to-top" title="Yukarı çık">↑</button>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Harvard CS50</strong>
-        <p>CS50 Rehberi — Eğitici içerik</p>
-      </div>
-      <div class="socials">
-        <a href="#" aria-label="GitHub" class="icon-link">
-          <!-- GitHub SVG -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 .5C5.73.5.5 5.73.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.18-3.11-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.19a10.98 10.98 0 0 1 5.73 0c2.19-1.5 3.15-1.19 3.15-1.19.62 1.59.23 2.76.11 3.05.73.81 1.18 1.85 1.18 3.11 0 4.43-2.69 5.4-5.25 5.69.41.36.77 1.08.77 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.68.8.56A11.53 11.53 0 0 0 23.5 12.02C23.5 5.73 18.27.5 12 .5z"/></svg>
-        </a>
-        <a href="#" aria-label="YouTube" class="icon-link">
-          <!-- YouTube SVG -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29.9 29.9 0 0 0 1 12a29.9 29.9 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29.9 29.9 0 0 0 23 12a29.9 29.9 0 0 0-.46-5.58z"/><path d="M9.75 15.02V8.98l5.5 3.02-5.5 3.02z"/></svg>
-        </a>
-      </div>
-      <div class="copyright">© 2026 CS50 Rehberi. Tüm hakları saklıdır.</div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
